@@ -1,0 +1,637 @@
+.container {
+    background-color: #000000;
+    min-height: 100vh;
+}
+
+/* Firefox support */
+* {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    font-family: SpotifyMixUI, CircularSp-Arab, CircularSp-Hebr, CircularSp-Cyrl, CircularSp-Grek, CircularSp-Deva, "Helvetica Neue", helvetica, arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, "MS Gothic";
+}
+
+
+nav {
+    width: 100%;
+    height: 10vh;
+    padding: 0 10px 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home {
+    width: 47px;
+    padding: 10px;
+    border-radius: 23px;
+    background-color: #e0e0e0;
+}
+
+.homes {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 25px;
+}
+
+.sear {
+    width: 43px;
+    padding: 10px;
+    border-radius: 23px 0 0 23px;
+    background-color: #e0e0e0;
+}
+
+::placeholder {
+    color: #e0e0e0;
+    opacity: 0.75;
+    font-size: 16px;
+}
+
+.search {
+    display: flex;
+}
+
+.left {
+    gap: 10px;
+    display: flex;
+}
+
+.enter {
+    font-size: 17px;
+    background-color: #1f1f1f;
+    border: none;
+    border-radius: 0 23px 23px 0;
+    padding: 2px 210px 2px 5px;
+}
+
+hr {
+    height: auto;
+    width: 0;
+    opacity: 0.7;
+    margin: 10px 0;
+}
+
+p {
+    color: #a2a2a2;
+    font-weight: bold;
+    text-shadow: 10px;
+}
+
+.right {
+    display: flex;
+    gap: 20px;
+}
+
+.pre {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.down {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.log {
+    color: #000000;
+    background-color: white;
+    padding: 15px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.log:hover {
+    background-color: rgb(0, 0, 0);
+    color: #ffffff;
+    border: 1px solid white;
+}
+
+.app {
+    display: flex;
+    gap: 5px;
+}
+
+.up {
+    font-size: 14px;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.Bleft {
+    width: 26%;
+    background-color: #121212;
+    border-radius: 6px;
+    height: 90vh;
+    overflow: hidden;
+}
+
+.Bright {
+    width: 72%;
+    background-color: #121212;
+    height: 100vh;
+    border-radius: 6px;
+    position: relative;
+}
+
+h2 {
+    margin: 25px 35px;
+}
+
+.cardContainer {
+    width: 100%;
+    margin: 0 35px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 170px;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    transition: all 0.1s;
+    border-radius: 10px;
+}
+
+.cardImg {
+    width: 100%;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+h4 {
+    font-weight: 200;
+}
+
+.card:hover {
+    background-color: rgb(32, 32, 32);
+    border: 1px solid white;
+}
+
+.card p {
+    font-size: 14px;
+}
+
+.tag {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+    min-height: 70px;
+    background-color: #252525;
+    border: 1px solid rgb(136, 136, 136);
+    padding: 0 15px;
+    border-radius: 15px;
+    transition: all 0.1s;
+}
+
+.tag:hover {
+    background-color: #3f3f3f;
+}
+
+.play {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.tags {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    height: 700px;
+    overflow-y: hidden;
+}
+
+
+
+/* Spotify-style Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #121212;
+    /* Dark background */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333333;
+    /* Spotify green */
+    border-radius: 10px;
+    border: 2px solid #121212;
+    /* Creates a dark border gap */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #333333;
+    /* Brighter on hover */
+}
+
+/* Firefox support */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #333333 #121212;
+    /* thumb | track */
+}
+
+.list {
+    display: flex;
+    padding: 0px;
+    width: 100%;
+    max-height: 450px;
+    color: white;
+    font-size: 0.9em;
+    justify-content: center;
+}
+
+
+.list ul {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.list ul li {
+    text-align: left;
+    border: 1px solid rgb(70, 70, 70);
+    width: 320px;
+    margin-top: 5px;
+    font-size: 13px;
+    cursor: pointer;
+    min-height: 70px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #252525;
+    padding: 0 12px;
+    transition: all 0.2s;
+}
+
+.list ul li:hover {
+    border: 1px solid white;
+    background-color: #1a1a1a;
+    transform: translateY(-5px)
+}
+
+.plu {
+    cursor: pointer;
+    background-color: #121212;
+    border: 1px solid rgb(126, 126, 126);
+    max-width: 70px;
+    padding: 4px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.1s;
+}
+
+.plu:hover {
+    border: 2px solid white;
+}
+
+.playbar {
+    position: fixed;
+    width: 70%;
+    height: 100px;
+    padding: 10px 15px;
+    bottom: 20px;
+    right: 20px;
+    border-radius: 10px;
+    background-color: #5c5c5c;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    overflow-x: hidden;
+}
+
+.seekbar {
+    position: relative;
+    height: 6px;
+    width: 100%;
+    background-color: rgb(189, 170, 170);
+    border-radius: 10px;
+    overflow: visible;
+}
+
+.circle {
+    position: absolute;
+    bottom: -4px;
+    left: 0%;
+    right: 0;
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    background-color: rgb(53, 53, 53);
+    z-index: 10;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.images img {
+    cursor: pointer;
+}
+
+.ham {
+    display: none;
+}
+
+.songname {
+    font-weight: bold;
+    font-size: 15px;
+    width: 135px;
+    text-align: center;
+    color: white;
+}
+
+.volTime {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.cros {
+    display: none;
+}
+
+.images :nth-child(n) {
+    border: none;
+    background-color: #5c5c5c;
+}
+
+.glows {
+    transition: all 0.1s;
+    cursor: pointer;
+}
+
+.glows:hover {
+    color: white;
+    font-size: 17px;
+}
+
+#play,
+#prev,
+#next {
+    padding: 8px;
+    border-radius: 50%;
+    background-color: rgb(180, 180, 180);
+}
+
+@media (max-width: 800px) {
+    .Bright {
+        width: 100%;
+    }
+
+    .Bleft {
+        position: fixed;
+        top: 0;
+        padding: 0 5px;
+        left: -300px;
+        /* hidden off-screen */
+        width: 260px;
+        height: 100vh;
+        background-color: #121212;
+        transition: left 0.3s ease;
+        z-index: 999;
+        /* hover above Bright */
+    }
+
+    .cros {
+        display: block;
+    }
+
+    .Bleft.show {
+        left: 0;
+        /* slide in */
+    }
+
+    .playbar {
+        width: 95%;
+        margin: auto;
+    }
+
+    .enter {
+        display: none;
+    }
+
+    .search img {
+        border-radius: 50%;
+
+    }
+
+    .nav {
+        height: 20vh;
+    }
+
+    .glows {
+        font-size: 13px;
+    }
+
+    .log {
+        font-size: 13px;
+    }
+
+    .hom {
+        display: none;
+    }
+
+    .ham {
+        display: flex;
+    }
+
+    .list ul li {
+        width: 100%;
+    }
+
+    .plu {
+        display: none;
+    }
+
+}
+
+@media (max-width: 552px) {
+    .glows {
+        display: none;
+    }
+
+    hr {
+        display: none;
+    }
+
+    .search img {
+        display: none;
+    }
+
+    .player {
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px;
+        height: auto;
+    }
+
+    .playbar {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        height: auto;
+        padding: 15px;
+        border-radius: 18px;
+        background: #5c5c5c;
+        box-shadow: 0px 5px 18px rgba(0,0,0,0.6);
+        z-index: 2;
+    }
+    
+    #time{
+        font-size: 14px;
+    }
+    .volTime {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .images {
+        display: flex;
+        gap: 20px;
+    }
+
+    .song-info{
+        display: flex;
+        justify-content: left;
+        align-items: center;
+    }
+
+    .progress {
+        /* timeline bar */
+        width: 100%;
+    }
+
+    .volume-wrap {
+        display: none;
+    }
+
+    #play,
+    #prev,
+    #next {
+        padding: 4px;
+        border-radius: 50%;
+        background-color: rgb(180, 180, 180);
+    }
+}
+
+/* --- BRIGHT SECTION IMPROVEMENTS --- */
+
+.Bright {
+    padding: 20px 35px;
+    background: linear-gradient(180deg, #1c1c1c 0%, #0f0f0f 100%);
+    overflow-y: auto;
+}
+
+/* Section title */
+.Bright h2 {
+    margin: 20px 0;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Better grid */
+.cardContainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 25px;
+    padding-right: 20px;
+}
+
+/* Card improvement */
+.card {
+    top: 20px;
+    background-color: #181818;
+    border-radius: 12px;
+    padding: 15px;
+    transition: transform 0.15s ease, background 0.15s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    background-color: #2a2a2a;
+    transform: translateY(-5px);
+}
+
+.cardImg {
+    width: 100%;
+    height: 160px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Song card text */
+.card h4 {
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.card p {
+    font-size: 13px !important;
+    opacity: 0.7;
+}
+
+/* Add multiple sections inside Bright */
+.section {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+}
+.art {
+    width: 200px;        /* adjust size if needed */
+    height: 200px;
+    border-radius: 50%;  /* makes it circular */
+    overflow: hidden;    /* keeps image inside circle */
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #222;    /* fallback bg */
+}
+
+.art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* makes the image fill the circle nicely */
+    border-radius: 50%;
+}
+
+/* Hide artist names */
+.art p, 
+.art h3, 
+.art h4, 
+.art span {
+    display: none !important;
+}
