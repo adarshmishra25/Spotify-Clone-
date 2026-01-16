@@ -93,7 +93,16 @@ async function main() {
       play.src = "images/play.svg";
     }
   });
-  
+  function updateVolumeIcon(volValue) {
+    if (volValue === 0) {
+      vol.src = "images/volumeoff.svg";
+    } else if (volValue < 0.5) {
+      vol.src = "images/vollow.svg";
+    } else {
+      vol.src = "images/volume.svg";
+    }
+  }
+
   document.addEventListener("keydown", (e) => {
     if (e.key === " ") {
       e.preventDefault();
@@ -126,16 +135,30 @@ async function main() {
       playMusic(songs[prevIndex]);
     } else if (e.key === "ArrowUp") {
       e.preventDefault();
-      let newVol = Math.min(1, CurrentSong.volume + 0.05);
+
+      let newVol = Math.min(1, +(CurrentSong.volume + 0.05).toFixed(2));
       CurrentSong.volume = newVol;
       volumeSlider.value = newVol;
       updateVolumeIcon(newVol);
     } else if (e.key === "ArrowDown") {
       e.preventDefault();
-      let newVol = Math.max(0, CurrentSong.volume - 0.05);
+
+      let newVol = Math.max(0, +(CurrentSong.volume - 0.05).toFixed(2));
       CurrentSong.volume = newVol;
       volumeSlider.value = newVol;
       updateVolumeIcon(newVol);
+    } else if (e.key === "m") {
+      e.preventDefault();
+      if(CurrentSong.volume !== 0){
+        CurrentSong.volume = 0;
+        volumeSlider.value = 0;
+        updateVolumeIcon(0);
+      }
+      else{
+        CurrentSong.volume = 1;
+        volumeSlider.value = 1;
+        updateVolumeIcon(1);
+      }
     }
   });
 
