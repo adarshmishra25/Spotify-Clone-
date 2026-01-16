@@ -27,6 +27,7 @@ nav {
     padding: 10px;
     border-radius: 23px;
     background-color: #e0e0e0;
+    cursor: pointer;
 }
 
 .homes {
@@ -374,6 +375,7 @@ h4 {
 
 .cros {
     display: none;
+    cursor: pointer;
 }
 
 .images :nth-child(n) {
