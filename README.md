@@ -27,7 +27,7 @@ This project focuses on **keyboard controls, smooth playback, volume handling, a
 | `Arrow Left` | Previous song |
 | `Arrow Up` | Increase volume |
 | `Arrow Down` | Decrease volume |
-| `M` | volume |
+| `M` | volume off or on |
 
 > Keyboard shortcuts work globally and prevent unwanted page scrolling.
 
@@ -59,7 +59,5 @@ This project focuses on **keyboard controls, smooth playback, volume handling, a
 No frameworks. No libraries. Just core web fundamentals.
 
 ---
-
-## 📂 Project Structure
 
 
